@@ -31,13 +31,14 @@ def run_all_methods(A, b, x_exact, label):
     I_approx = A_inv @ A
     print("\nОбратная матрица A⁻¹:")
     print(A_inv)
-    print("Норма (E - A⁻¹A):", norm(np.eye(len(A)) - I_approx))
+    print(f"Норма (E - A⁻¹A): {norm(np.eye(len(A)) - A_inv @ A):.3e}")
     
     # Обусловленность
     cond_1 = cond(A, 1)
     cond_inf = cond(A, np.inf)
-    print("cond_1(A):", cond_1)
-    print("cond_inf(A):", cond_inf)
+    print(f"cond_1(A): {cond_1:.3e}")
+    print(f"cond_inf(A): {cond_inf:.3e}")
+
 
     if cond_1 < 100:
         print("➤ Матрица хорошо обусловлена.")
