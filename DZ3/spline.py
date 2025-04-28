@@ -1,6 +1,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 from scipy.interpolate import CubicSpline
+from custom_spline import NaturalCubicSpline
 from data_input import get_spline_function_and_range
 
 def build_cubic_spline():
